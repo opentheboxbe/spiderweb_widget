@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>spiderweb</title>
+
+  <!-- optional -->
+  <link rel="stylesheet" href="/openthebox/assets/css/bootstrap/css/bootstrap.min.css">
+
+  <!-- optional -->
+  <link rel="stylesheet" href="/openthebox/pkg/css/app.css"/>
+</head>
+
+<body>
+
+<!-- optional, not needed if jquery is already available -->
+<script src="/openthebox/assets/libs/jquery/dist/jquery.min.js"></script>
+
+<script src="/openthebox/pkg/libs.js"></script>
+
+<script src="/openthebox/pkg/js.js"></script>
+<script>
+  var spiderweb
+
+  angular.element(() => {
+    spiderweb = new Openthebox.Spiderweb(apiUrl="https://openthebox.be", assetsUrl="/openthebox/assets")
+    spiderweb.show("BE0448548388", "Company")
+  })
+
+  var onButtonClick = () => {
+    spiderweb.show(document.getElementById("vat").value, "Company")
+  }
+</script>
+
+<div>
+  <div>Demo app:</div>
+  <div>
+    <label for="vat">Vat</label>
+    <input id="vat" value="BE0448548388">
+    <button onclick="onButtonClick()">Show</button>
+  </div>
+</div>
+<hr>
+<div>Spiderweb:</div>
+<!-- the spiderweb widget -->
+<div ng-app="openthebox" ng-controller="spiderwebCtrl" id="spiderwebScope">
+  <ng-include src="'/openthebox/app/spiderweb/template.html'"></ng-include>
+</div>
+</body>
+</html>
