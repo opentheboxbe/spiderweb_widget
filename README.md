@@ -1,15 +1,22 @@
 # openthebox spiderweb widget
 
+### Overview
+
+The openthebox.be spiderweb widget is a javascript package that makes it very easy to integrate the openthebox.be spiderweb into your own website. It offers the same interactive experience as the original spiderweb like the ability to expand nodes or filter specific relationships, while allowing full customization of the look and feel to make it fit in perfectly into your own website.
+
 ### Architecture
+
+The spiderweb widget should be included in the front end of your application ("app frontend"). It will communicate with the openthebox web server ("openthebox backend") via your own web server ("app backend"). In other words, your own web server will proxy the communication.
+
 ![](architecture.png)
 
 ### API calls
 
 The spiderweb widget will make REST API requests to {api url}/api/graph/*
 
-These requests should be proxied by your own application server and forwarded - while including your api token in an ```authorization: Bearer``` header - to the openthebox.be server. See also the architecture schema.  
+These requests should be proxied by your own application server and forwarded - while including your api token in an ```authorization: Bearer``` header - to the openthebox.be server.
 
-The {api url} is configurable when instantiating the Openthebox.Spiderweb class
+The {api url} is configurable when instantiating the Openthebox.Spiderweb class and typically starts with your domain name, e.g. https://my-server.com/openthebox
 
 You can generate an api token as following:
 
@@ -83,8 +90,8 @@ The spiderweb widget can be activated as following:
 
 2] javascript
 ```javascript
-// assuming that the API endpoints are located on /openthebox/api/graph and the images are located on /openthebox/assets
-var spiderweb = new Openthebox.Spiderweb(apiUrl="/openthebox", assetsUrl="/openthebox/assets")
+// assuming that the API endpoints are located on https://my-server.com/openthebox/api/graph and the images are located on /openthebox/assets
+var spiderweb = new Openthebox.Spiderweb(apiUrl="https://my-server.com/openthebox", assetsUrl="/openthebox/assets")
 
 //either show a company by vat number:
 spiderweb.show("BE0448548388", "Company")
