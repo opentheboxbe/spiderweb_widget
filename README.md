@@ -31,35 +31,6 @@ curl --request POST \
 
 This token will expire after 24 hours so a new token should be generated before then  
 
-### Directory structure
-
-```
-+-- openthebox
-|   +-- app
-|       +-- spiderweb
-|           +-- template.html       <-- location is configurable (see index.html ng-include src)
-|   +-- assets
-|       +-- css
-|           +-- bootstrap           <-- optional
-|       +-- images
-|           +-- glyphicons          <-- location is configurable (see Openthebox.Spiderweb's assetsUrl)
-|       +-- libs
-|           +-- jquery              <-- optional: not needed if jquery is already available
-|   +-- pkg
-|       +-- css                     <-- optional
-|       +-- fonts                   <-- optional
-|       +-- libs.js
-|       +-- js.js
-+-- index.html
-```
-
-### Javascript dependencies
-
-- jQuery 3.3.1 (or use your own)
-- AngularJS 1.7.5
-- qTip2 3.0.3
-- Cytoscape 3.2.12
-
 ### Usage
 The spiderweb widget can be activated as following:
 
@@ -102,6 +73,35 @@ spiderweb.show("123456", "Person")
 
 [Example](index.html)
 ![](spiderweb.png)
+
+### Directory structure
+
+```
++-- openthebox
+|   +-- app
+|       +-- spiderweb
+|           +-- template.html       <-- location is configurable (see index.html ng-include src)
+|   +-- assets
+|       +-- css
+|           +-- bootstrap           <-- optional
+|       +-- images
+|           +-- glyphicons          <-- location is configurable (see Openthebox.Spiderweb's assetsUrl)
+|       +-- libs
+|           +-- jquery              <-- optional: not needed if jquery is already available
+|   +-- pkg
+|       +-- css                     <-- optional
+|       +-- fonts                   <-- optional
+|       +-- libs.js
+|       +-- js.js
++-- index.html
+```
+
+### Javascript dependencies
+
+- jQuery 3.3.1 (or use your own)
+- AngularJS 1.7.5
+- qTip2 3.0.3
+- Cytoscape 3.2.12
 
 
 
