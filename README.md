@@ -14,7 +14,8 @@ The spiderweb widget should be included in the front end of your application ("a
 
 The spiderweb widget will make REST API requests to {api url}/api/graph/*
 
-These requests should be proxied by your own application server and forwarded - while including your api token in an ```authorization: Bearer {your api token}``` header - to the openthebox.be server.
+These requests should be proxied by your own application server and forwarded - while including your api token in the header - to the openthebox.be server:
+```authorization: Bearer {your api token}``` 
 
 The {api url} is configurable when instantiating the Openthebox.Spiderweb class and typically starts with your domain name, e.g. https://my-server.com/openthebox
 
