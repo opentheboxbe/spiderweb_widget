@@ -18,7 +18,7 @@ These requests should be proxied by your own application server and forwarded - 
 
 The {api url} is configurable when instantiating the Openthebox.Spiderweb class and typically starts with your domain name, e.g. https://my-server.com/openthebox
 
-You can generate an api token as following:
+You can generate an api token from the client id and client secret that comes with your openthebox.be subscription as following:
 
 ```curl
 curl --request POST \
